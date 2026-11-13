@@ -4,6 +4,7 @@ metadata:
   name: egeorgel-iot-server
   namespace: dev
 spec:
+  type: LoadBalancer
   selector:
     app: egeorgel-iot
   ports:
