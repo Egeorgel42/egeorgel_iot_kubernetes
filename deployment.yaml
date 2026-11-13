@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: egeorgel-iot
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: egeorgel-iot
+  template:
+    metadata:
+      labels:
+        app: egeorgel-iot
+    spec:
+      containers:
+        - name: playground
+          image: wil42/playground:v1   # <-- the ONLY line that changes for v2
+          ports:
+            - containerPort: 8888
